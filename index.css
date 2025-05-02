@@ -212,6 +212,17 @@ body {
     margin-left: 10px;
 }
 
+.button-placeholder {
+    background: none;
+    background-color: transparent;
+    background-size: cover;
+    width: 125px;
+    height: 40px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
 
 .set-item button:hover {
     color: #C70039;
@@ -232,7 +243,7 @@ body {
     height: 40px;
     width: 300px;
     margin-top: 10px;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .bottom-icon-container img {
