@@ -38,10 +38,50 @@ body {
     width: 100%;
     outline: none;
     font-weight: bold;
-    ::placeholder {
-        color: white;
-    }
 }
+.input input::placeholder {
+    color: white;
+    opacity: 1; /* Firefox requires this */
+}
+
+.search-button-container {
+    display: flex;
+    position: fixed;
+    top: 125px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-button {
+    margin: 0;
+    background-image: url('images/search.png');
+    background-size: cover;
+    width: 380px;
+    height: 50px;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.search-button input {
+    background: transparent;
+    border: none;
+    color: #C70039;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    font-weight: bold;
+}
+.search-button input::placeholder {
+    color: #C70039;
+    opacity: 1; /* Firefox requires this */
+}
+
 
 .checkbox-box {
     border: 2px solid #ccc;
@@ -68,6 +108,42 @@ body {
     margin-top: 40px;
 }
 
+.catalogue-button-container {
+    display: flex;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+.catalogue-button {
+    background-image: url('images/button.png');
+    background-color: transparent;
+    background-size: cover;
+    width: 200px;
+    height: 60px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.catalogue-button-pressed {
+    background-image: url('images/buttonPressed.png');
+    background-color: transparent;
+    background-size: cover;
+    width: 200px;
+    height: 60px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .signup-button {
     margin: 0;
     background-image: url('images/signup.png');
@@ -87,14 +163,126 @@ body {
     gap: 10px;
 }
 
-.top-banner {
+.sets-container {
+    margin-top: 220px;
+    width: 400px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: transparent;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-bottom: 100px;
+}
+
+.set-item {
+    padding: 10px 0;
+    display: flex;
+}
+
+.set-item img {
+    width: 180px;
+    height: 211px;
+    padding-right: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 70px;
+}
+
+.icon-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.set-item button {
+    background-image: url('images/button.png');
+    background-color: transparent;
+    background-size: cover;
+    width: 125px;
+    height: 40px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+.set-item button:hover {
+    color: #C70039;
+}
+.icon-group img {
+    width: 36px;
+    height: 38px;
+    margin-left: 20px;
+}
+
+.set-item:last-child {
+    border-bottom: none;
+}
+
+.bottom-icon-container {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 300px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.bottom-icon-container img {
+    width: 36px;
+    height: 38px;
+    margin-left: 20px;
+}
+
+.top-banner img {
+    width: 36px;
+    height: 38px;
+    padding: 10px;
+}
+
+.top-bar {
     width: 100%;
-    background-color: #C70039; 
+    background-color: #feee5a;
     color: white;
     padding: 30px;
     position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100px;
+}
+
+.top-banner {
+    width: 100%;
+    background-color: #C70039;
+    display: flex;
+    justify-content: right;
+    color: white;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    height: 60px;
     z-index: 1000;
+    border-bottom: 4px solid #900C3F;
 }
+
+.bottom-banner {
+    width: 100%;
+    background-color: #C70039;
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    z-index: 1000;
+    border-top: 4px solid #900C3F;
+}
+
