@@ -27,7 +27,8 @@
 
 <model-viewer
         id="model"
-        src="baum.usdz"
+        src="baum.glb"
+        ios-src="baum.usdz"
         alt="3D model"
         auto-rotate
         camera-controls
@@ -35,20 +36,16 @@
         ar
         shadow-intensity="1"
         exposure="1">
-    <button slot="ar-button">View in AR</button>
-    <div class="progress-bar hide" slot="progress-bar">
-        <div class="update-bar"></div>
-    </div>
 </model-viewer>
-
 <div class="text-container">
     <p></p>
-    <button rel="ar" href="baum.usdz">
-        Show statue in AR
-    </button>
-
-    <script src="https://unpkg.com/@google/model-viewer"></script>
+    <a rel="ar" href="baum.usdz">
+        <button class="button">AR Mode</button>
+    </a>
 </div>
+
+
+
 
 <div class="bottom-banner"></div>
 
@@ -70,6 +67,7 @@
             console.error('Error loading model:', error);
         });
     });
+    src="https://unpkg.com/@google/model-viewer";
 </script>
 </body>
 </html>
