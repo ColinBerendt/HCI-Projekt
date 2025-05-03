@@ -30,6 +30,20 @@ body {
     margin-top: 30px;
 }
 
+.text-container button {
+    background-image: url('images/button.png');
+    background-color: transparent;
+    background-size: cover;
+    width: 200px;
+    height: 60px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
 .input input {
     background: transparent;
     border: none;
@@ -295,5 +309,13 @@ body {
     height: 60px;
     z-index: 1000;
     border-top: 4px solid #900C3F;
+}
+
+.text-container {
+    width: 380px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
