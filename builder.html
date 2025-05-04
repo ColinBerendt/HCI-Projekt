@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Builder</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+    #viewer-container { max-width: 600px; margin: auto; }
+    button { font-size: 24px; padding: 10px 20px; margin: 10px; }
+    body {
+      background-color: #FFF06A;
+      text-align: center;
+      font-family: sans-serif;
+    }
+    </style>
+</head>
+<body>
+<div class="top-banner">
+    <a href="your-sets.html">
+        <img src="images/logout.png" alt="Back">
+    </a>
+</div>
+<div class="top-bar"></div>
+
+  <h1>3D Modellansicht</h1>
+  
+  <div id="viewer-container">
+    <model-viewer id="modelViewer"
+                  src="building_steps/step1.usdz"
+                  alt="3D Modell"
+                  ar
+                  ar-modes="scene-viewer quick-look"
+                  auto-rotate
+                  camera-controls
+                  style="width: 100%; height: 500px;">
+    </model-viewer>
+    <div id="navigation-bar">
+        <button onclick="prevModel()">⬅️</button>
+        <span id="step-counter">1 | 5</span>
+        <button onclick="nextModel()">➡️</button>
+      </div>
+  </div>
+
+  <script>
+    const models = [
+  "building_steps/step1.usdz",
+  "building_steps/step2.usdz",
+  "building_steps/step3.usdz",
+  "building_steps/step4.usdz",
+  "building_steps/step5.usdz"
+];
+  
+    let currentIndex = 0;
+    const viewer = document.getElementById("modelViewer");
+  
+    function updateModel() {
+      viewer.src = models[currentIndex];
+      document.getElementById("step-counter").textContent = `${currentIndex + 1} | ${models.length}`;
+    }
+  
+    function nextModel() {
+      if (currentIndex < models.length - 1) {
+        currentIndex++;
+        updateModel();
+      }
+    }
+  
+    function prevModel() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateModel();
+      }
+    }
+
+    updateModel();
+  </script>
+
+</body>
+</html>
